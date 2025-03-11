@@ -1,36 +1,137 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# HireRoom - Smart Interview Platform 🎯
 
-## Getting Started
+HireRoom is a modern technical interview platform that combines real-time video calls with an integrated code editor, making technical interviews seamless and efficient.
 
-First, run the development server:
+![HireRoom Logo](public/icon.svg)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Features ✨
+
+- **Real-time Video Calls** - Smooth video communication using Stream SDK
+- **Integrated Code Editor** - Built-in Monaco editor with multiple language support
+- **Interview Scheduling** - Easy-to-use interface for scheduling and managing interviews
+- **Role-based Access** - Separate interfaces for interviewers and candidates
+- **Interview Dashboard** - Track and manage all interviews in one place
+- **Pass/Fail System** - Quick evaluation system for interviewers
+- **Comments & Feedback** - Structured feedback system for better evaluation
+- **Dark/Light Mode** - Comfortable viewing experience with theme support
+
+## Tech Stack 🛠️
+
+- **Frontend Framework**: Next.js 14
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Authentication**: Clerk
+- **Database & Backend**: Convex
+- **Video SDK**: Stream
+- **Code Editor**: Monaco Editor
+- **State Management**: React Hooks + Convex
+- **Type Safety**: TypeScript
+
+## Getting Started 🚀
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm or yarn
+- Git
+
+### Environment Variables
+
+Create a `.env.local` file in the root directory with the following variables:
+
+```env
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+
+NEXT_PUBLIC_CONVEX_URL=your_convex_url
+
+NEXT_PUBLIC_STREAM_KEY=your_stream_key
+STREAM_SECRET=your_stream_secret
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/shivam-2101/HireRoom-app.git
+   cd HireRoom-app
+   ```
 
-## Learn More
+2. Install dependencies
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Start the development server
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## Deploy on Vercel
+4. Start the Convex backend
+   ```bash
+   npx convex dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure 📁
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+├── src/
+│   ├── app/                 # Next.js app router pages
+│   ├── components/         # Reusable components
+│   ├── hooks/             # Custom React hooks
+│   ├── lib/               # Utility functions
+│   └── actions/           # Server actions
+├── convex/                # Convex backend
+├── public/               # Static assets
+└── ...config files
+```
+
+## Key Features Explained 🔍
+
+### Interview Flow
+
+1. **Scheduling**: Interviewers can schedule interviews with candidates
+2. **Joining**: Both parties join through unique meeting links
+3. **Coding**: Real-time code collaboration during interview
+4. **Evaluation**: Pass/Fail marking with feedback system
+
+### Role-based Access
+
+- **Interviewers**: Can schedule interviews, evaluate candidates, and provide feedback
+- **Candidates**: Can view and join scheduled interviews
+
+### Real-time Features
+
+- Video calls with screen sharing
+- Code editor with syntax highlighting
+- Real-time compilation and execution
+- Instant feedback and comments
+
+## Contributing 🤝
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License 📝
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Made with ❤️ by Shivam Shukla
